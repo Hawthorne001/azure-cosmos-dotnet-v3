@@ -54,13 +54,20 @@ namespace Microsoft.Azure.Cosmos.Tracing
                      "db.cosmosdb.request_charge",
                      "db.cosmosdb.regions_contacted",
                      "db.cosmosdb.item_count",
-                     "db.operation.batch.size",
+                     "db.operation.batch_size",
                      "db.cosmosdb.activity_id",
                      "db.cosmosdb.correlated_activity_id",
                      "exception.type",
                      "exception.message",
                      "exception.stacktrace",
-                     "error.type"
+                     "db.query.text",
+                     "error.type",
+                     AppInsightClassicAttributeKeys.DbName,
+                     AppInsightClassicAttributeKeys.ContainerName,
+                     AppInsightClassicAttributeKeys.DbOperation,
+                     AppInsightClassicAttributeKeys.ServerAddress,
+                     AppInsightClassicAttributeKeys.StatusCode,
+                     AppInsightClassicAttributeKeys.UserAgent
                 };
 
                 foreach (KeyValuePair<string, object> actualTag in activity.TagObjects)
