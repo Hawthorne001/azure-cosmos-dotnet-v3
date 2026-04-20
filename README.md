@@ -1,81 +1,28 @@
-[![NuGet](https://img.shields.io/nuget/v/Microsoft.Azure.Cosmos.svg)](https://www.nuget.org/packages/Microsoft.Azure.Cosmos)
-[![NuGet Prerelease](https://img.shields.io/nuget/vpre/Microsoft.Azure.Cosmos.svg)](https://www.nuget.org/packages/Microsoft.Azure.Cosmos)
+---
+cover: https://gitbookio.github.io/onboarding-template-images/header.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
 
-# Microsoft Azure Cosmos DB .NET SDK Version 3
+# Welcome
 
-This client library enables client applications to connect to Azure Cosmos DB for NoSQL. Azure Cosmos DB is a globally distributed, multi-model database service. For more information, refer to https://azure.microsoft.com/services/cosmos-db/.
+Welcome to the GitBook Starter Template! Here you'll get an overview of all the amazing features GitBook offers to help you build beautiful, interactive documentation.
 
-```csharp
-CosmosClient client = new CosmosClient("https://mycosmosaccount.documents.azure.com:443/", "mysupersecretkey");
-Database database = await client.CreateDatabaseIfNotExistsAsync("MyDatabaseName");
-Container container = await database.CreateContainerIfNotExistsAsync(
-    "MyContainerName",
-    "/partitionKeyPath",
-    400);
+You'll see some of the best parts of GitBook in action — and find help on how you can turn this template into your own.
 
-// Create an item
-dynamic testItem = new { id = "MyTestItemId", partitionKeyPath = "MyTestPkValue", details = "it's working", status = "done" };
-ItemResponse<dynamic> createResponse = await container.CreateItemAsync(testItem);
+### Jump right in
 
-// Query for an item
-using (FeedIterator<dynamic> feedIterator = container.GetItemQueryIterator<dynamic>(
-    "select * from T where T.status = 'done'"))
-{
-    while (feedIterator.HasMoreResults)
-    {
-        FeedResponse<dynamic> response = await feedIterator.ReadNextAsync();
-        foreach (var item in response)
-        {
-            Console.WriteLine(item);
-        }
-    }
-}
-```
-
-## Install via [Nuget.org](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)
-
-`Install-Package Microsoft.Azure.Cosmos`
-
-For available versions, see [SDK versioning](./docs/versioning.md).
-
-## Useful links
-
-- [Get Started APP](https://docs.microsoft.com/azure/cosmos-db/sql-api-get-started)
-- [GitHub samples](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples)
-- [SDK Best practices](https://docs.microsoft.com/azure/cosmos-db/sql/best-practice-dotnet)
-- [MultiMaster samples](https://github.com/markjbrown/azure-cosmosdb-dotnet/tree/master/samples/MultiMaster)
-- [Resource Model of Azure Cosmos DB Service](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources)
-- [Cosmos DB Resource URI](https://docs.microsoft.com/rest/api/documentdb/documentdb-resource-uri-syntax-for-rest)
-- [Partitioning](https://docs.microsoft.com/azure/cosmos-db/partition-data)
-- [Introduction to Azure Cosmos DB for NoSQL queries](https://docs.microsoft.com/azure/cosmos-db/sql-api-sql-query)
-- [SDK API](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos?view=azure-dotnet)
-- [Using emulator](https://github.com/Azure/azure-documentdb-dotnet/blob/master/docs/documentdb-nosql-local-emulator.md)
-- [Capture traces](https://github.com/Azure/azure-documentdb-dotnet/blob/master/docs/documentdb-sdk_capture_etl.md)
-- [Release notes](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/changelog.md)
-- [Diagnose and troubleshooting](https://docs.microsoft.com/azure/cosmos-db/troubleshoot-dot-net-sdk)
-
-## Microsoft Open Source Code of Conduct
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-
-Resources:
-
-- [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)
-- [Microsoft Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
-- Contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with questions or concerns
-
-
-## Contributing
-
-For details on contributing to this repository, see the [contributing guide](CONTRIBUTING.md).
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Create your first site</td><td><a href=".gitbook/assets/1.png">1.png</a></td><td></td><td><a href="getting-started/quickstart.md">quickstart.md</a></td></tr><tr><td><strong>Basics</strong></td><td>Learn the basics of GitBook</td><td><a href=".gitbook/assets/2.png">2.png</a></td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Publish your docs</strong></td><td>Share your docs online</td><td><a href=".gitbook/assets/3.png">3.png</a></td><td></td><td><a href="getting-started/publish-your-docs.md">publish-your-docs.md</a></td></tr></tbody></table>
